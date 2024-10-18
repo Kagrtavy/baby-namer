@@ -1,25 +1,9 @@
 <?php
+include_once __DIR__ . '/../functions/functions.php';
 $maleFilePath = __DIR__ . '/../names/male_names.json';
 $femaleFilePath = __DIR__ . '/../names/female_names.json';
-
-if (file_exists($maleFilePath)) {
-    $maleNames = json_decode(file_get_contents($maleFilePath), true);
-    if (!is_array($maleNames)) {
-        $maleNames = [];
-    }
-} else {
-    $maleNames = [];
-}
-
-if (file_exists($femaleFilePath)) {
-    $femaleNames = json_decode(file_get_contents($femaleFilePath), true);
-    if (!is_array($femaleNames)) {
-        $femaleNames = [];
-    }
-} else {
-    $femaleNames = [];
-}
-
+$maleNames = getMaleNames($maleFilePath);
+$femaleNames = getFemaleNames($femaleFilePath);
 $maxNames = max(count($maleNames), count($femaleNames));
 ?>
 <!doctype html>
