@@ -39,18 +39,11 @@ $maxNames = max(count($maleNames), count($femaleNames));
     <main>
         <div>
             <?php include 'form.php'; ?>
-            <?php if (isset($_GET['error']) && $_GET['error'] === 'name_exists'):
-                $existingName = htmlspecialchars($_GET['name']); ?>
-                <p>This name is already in the list: <?= $existingName ?></p>
-            <?php endif; ?>
         </div>
         <?php include 'table.php'; ?>
     </main>
     <footer>
-        <?php if (isset($_GET['created_name'])):
-            $createdName = htmlspecialchars($_GET['created_name']); ?>
-            Created name - <?= $createdName ?>, 2024
-        <?php endif; ?>
+        <?php include 'footer.php'; ?>
     </footer>
     </body>
 </html>
