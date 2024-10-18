@@ -8,6 +8,6 @@
     <input type="submit" value="Submit"/>
 </form>
 <?php if (isset($_GET['error']) && $_GET['error'] === 'name_exists'):
-    $existingName = htmlspecialchars($_GET['name']); ?>
+    $existingName = $_GET['name']; ?>
     <p>This name is already in the list: <?= $existingName ?></p>
 <?php endif; ?>
