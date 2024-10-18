@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     checkIfNameExists($name, $existingData);
     $existingData[] = $name;
     file_put_contents($filePath, json_encode($existingData, JSON_PRETTY_PRINT));
-    header("Location: ../views/main.php?created_name=" . urlencode($name));
+    header("Location: ../views/main.php?created_name=" . $name);
     exit;
 }
 ?>
